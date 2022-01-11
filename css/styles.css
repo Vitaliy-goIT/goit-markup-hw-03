@@ -30,7 +30,9 @@ ul {
   margin-left: 0;
   margin-bottom: 0;
   margin-right: 0;
+  padding: 0;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -40,16 +42,21 @@ body {
   color: var(--primary-text-color);
 }
 
+/* Утилиты */
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.list {
+  list-style: none;
+}
+
 /* header - section */
 
 .header {
-  outline: 2px solid tomato;
   border-bottom: 1px solid #ececec;
-}
-
-.navigation {
-  display: flex;
-  align-items: center;
 }
 
 .logo {
@@ -66,11 +73,42 @@ body {
   color: var(--accent);
 }
 
+.conteiner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
+  /* outline: 2px solid tomato; */
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .navigation {
+  display: flex;
+  align-items: center;
   list-style: none;
+
+  margin-left: 93px;
+}
+
+.navigation-item + .navigation-item {
+  margin-left: 50px;
 }
 
 .nav-item {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -86,7 +124,9 @@ body {
 }
 
 .contacts {
+  display: flex;
   list-style: none;
+  margin-left: auto;
 }
 .contacts-items {
   font-weight: 500;
@@ -95,6 +135,10 @@ body {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   text-decoration: none;
+}
+
+.contacts .item + .item {
+  margin-left: 50px;
 }
 
 .contacts-items:hover,
@@ -107,33 +151,45 @@ body {
 /* hero - section */
 .hero {
   background-color: var(--footer-background-color);
+  text-align: center;
 }
 
 .main-heading {
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
+
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
   color: var(--button-text-color);
 }
 
-.button {
+.hero-button {
+  padding: 10px 32px;
+
   color: var(--button-text-color);
   background-color: var(--accent);
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 /* peculiarities */
-.hidden {
+
+.peculiarities {
+  padding-bottom: 0;
 }
 
-.list {
-  list-style: none;
+.peculiarities-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .peculiarities-heading {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -143,9 +199,13 @@ body {
   color: var(--secondary-text-color);
 }
 
+.peculiarities-item {
+  width: 270px;
+}
 /* What are we doing */
 
-.seconady-heading {
+.secondary-heading {
+  margin-bottom: 50px;
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
@@ -155,15 +215,40 @@ body {
   color: var(--secondary-text-color);
 }
 
+.image-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* teem section */
 .teem-section {
   background-color: var(--secondary-background-color);
 }
 
+.team-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 .list-item {
+  text-align: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
   background-color: var(--background-color);
 }
+
+.photo {
+  display: block;
+}
+
+.team-padding {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .name {
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -184,11 +269,22 @@ body {
 /* footer */
 
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--footer-background-color);
+}
+
+.space {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .white-logo {
   color: var(--button-text-color);
+}
+
+.contact > li + li {
+  margin-top: 9px;
 }
 
 .address {
@@ -215,7 +311,14 @@ body {
 
 /* portfolio */
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .filter-buttons {
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -224,23 +327,60 @@ body {
 
   color: var(--secondary-text-color);
   cursor: pointer;
+
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.buttons li + li {
+  margin-left: 8px;
 }
 
 .filter-buttons:hover,
 .filter-buttons:focus {
   color: var(--button-text-color);
   background-color: var(--accent);
+  border-color: transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
+  margin-right: 30px;
+  margin-bottom: 30px;
   background-color: var(--background-color);
+}
+
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.card:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .card-link {
   text-decoration: none;
 }
 
+.cards-img {
+  display: block;
+}
+
+.border {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+
 .card-name {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
