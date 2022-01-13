@@ -51,6 +51,8 @@ body {
 
 .list {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /* header - section */
@@ -150,6 +152,8 @@ body {
 
 /* hero - section */
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-color: var(--footer-background-color);
   text-align: center;
 }
@@ -181,6 +185,17 @@ body {
 
 .peculiarities {
   padding-bottom: 0;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .peculiarities-list {
@@ -218,6 +233,12 @@ body {
 .image-list {
   display: flex;
   justify-content: space-between;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* teem section */
